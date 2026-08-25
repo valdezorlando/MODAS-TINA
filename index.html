@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modas Tina | Tienda de Ropa</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo-link">
+        <img src="img/logo.png" alt="Logo Modas Tina" class="logo">
+        <span class="brand-name">Modas Tina</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn-cart" id="btnCart" aria-label="Carrito">
+          🛒 <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="btn-menu" id="btnMenu" aria-label="Menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="inicio">
+    <div class="container hero-content">
+      <h1>Nueva Colección<br><span>Temporada 2026</span></h1>
+      <p>Descubre las últimas tendencias en moda femenina con la calidad y el estilo que te mereces.</p>
+      <a href="#productos" class="btn btn-primary">Ver Colección</a>
+    </div>
+  </section>
+
+  <!-- ================= BENEFICIOS ================= -->
+  <section class="features">
+    <div class="container features-grid">
+      <div class="feature">
+        <span class="feature-icon">🚚</span>
+        <h3>Envío Rápido</h3>
+        <p>A todo el país en 24-48 horas</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">💳</span>
+        <h3>Pago Seguro</h3>
+        <p>Tarjeta, transferencia o efectivo</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">↩️</span>
+        <h3>Cambios Fáciles</h3>
+        <p>30 días para cambiar tu talla</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">✨</span>
+        <h3>Calidad Premium</h3>
+        <p>Prendas seleccionadas una a una</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRODUCTOS ================= -->
+  <section class="products" id="productos">
+    <div class="container">
+      <h2 class="section-title">Nuestros <span>Productos</span></h2>
+      <p class="section-subtitle">Las tendencias más buscadas de la temporada</p>
+
+      <div class="filters" id="filters">
+        <button class="filter-btn active" data-filter="todos">Todos</button>
+        <button class="filter-btn" data-filter="vestidos">Vestidos</button>
+        <button class="filter-btn" data-filter="blusas">Blusas</button>
+        <button class="filter-btn" data-filter="pantalones">Pantalones</button>
+        <button class="filter-btn" data-filter="accesorios">Accesorios</button>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+        <!-- Los productos se cargan con JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NOSOTROS ================= -->
+  <section class="about" id="nosotros">
+    <div class="container about-grid">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80" alt="Interior de la tienda Modas Tina">
+      </div>
+      <div class="about-text">
+        <h2>Sobre <span>Modas Tina</span></h2>
+        <p>Somos una tienda de ropa dedicada a realzar la belleza de cada mujer. Con años de experiencia en el mundo de la moda, seleccionamos cada prenda pensando en tu comodidad, estilo y elegancia.</p>
+        <ul class="about-list">
+          <li>✔ Asesoría personalizada de talla y estilo</li>
+          <li>✔ Prendas de la mejor calidad del mercado</li>
+          <li>✔ Nuevas colecciones cada mes</li>
+          <li>✔ Atención presencial y por WhatsApp</li>
+        </ul>
+        <a href="#contacto" class="btn btn-outline">Conócenos más</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACTO ================= -->
+  <section class="contact" id="contacto">
+    <div class="container">
+      <h2 class="section-title">Contáctanos</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <h4>Dirección</h4>
+              <p>Av. Principal #123, Centro</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <div>
+              <h4>Teléfono / WhatsApp</h4>
+              <p>+00 000 000 000</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <div>
+              <h4>Correo</h4>
+              <p>contacto@modastina.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🕒</span>
+            <div>
+              <h4>Horario</h4>
+              <p>Lun - Sáb: 9:00 am - 8:00 pm</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <input type="text" placeholder="Tu nombre" required>
+          <input type="email" placeholder="Tu correo" required>
+          <textarea placeholder="Escribe tu mensaje" rows="4" required></textarea>
+          <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="img/logo.png" alt="Modas Tina" class="footer-logo">
+        <p>Tu estilo, nuestra pasión. Moda femenina con calidad y elegancia.</p>
+      </div>
+      <div>
+        <h4>Enlaces</h4>
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div>
+        <h4>Categorías</h4>
+        <a href="#productos">Vestidos</a>
+        <a href="#productos">Blusas</a>
+        <a href="#productos">Pantalones</a>
+        <a href="#productos">Accesorios</a>
+      </div>
+      <div>
+        <h4>Síguenos</h4>
+        <div class="social">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Modas Tina. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
