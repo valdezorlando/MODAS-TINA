@@ -1,75 +1,13 @@
-// ============ PRODUCTOS DE MUESTRA ============
-const productos = [
-  { id: 1,  nombre: "Vestido Floral Elegante",   precio: 45.99, categoria: "vestidos",    tag: "Nuevo",    img: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&q=80" },
-  { id: 2,  nombre: "Vestido Largo de Verano",   precio: 52.00, categoria: "vestidos",    tag: "",         img: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500&q=80" },
-  { id: 3,  nombre: "Vestido Negro de Fiesta",   precio: 68.50, categoria: "vestidos",    tag: "Top",      img: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=500&q=80" },
-  { id: 4,  nombre: "Blusa Seda Champán",        precio: 28.99, categoria: "blusas",      tag: "",         img: "https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=500&q=80" },
-  { id: 5,  nombre: "Blusa Blanca Clásica",      precio: 24.50, categoria: "blusas",      tag: "Oferta",   img: "img/blusa-blanca.jpg" },
-  { id: 6,  nombre: "Blusa Manga Abullonada",    precio: 31.00, categoria: "blusas",      tag: "",         img: "https://images.unsplash.com/photo-1596783074918-c84cb06531ca?w=500&q=80" },
-  { id: 7,  nombre: "Pantalón Palazzo Negro",    precio: 38.00, categoria: "pantalones",  tag: "",         img: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500&q=80" },
-  { id: 8,  nombre: "Jeans Ajuste Perfecto",     precio: 42.99, categoria: "pantalones",  tag: "Top",      img: "img/jeans.jpg" },
-  { id: 9,  nombre: "Pantalón Tela Lino",        precio: 35.50, categoria: "pantalones",  tag: "",         img: "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=500&q=80" },
-  { id: 10, nombre: "Bolso Cuero Elegante",      precio: 49.99, categoria: "accesorios",  tag: "Nuevo",    img: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&q=80" },
-  { id: 11, nombre: "Aretes Dorados Premium",    precio: 15.00, categoria: "accesorios",  tag: "",         img: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&q=80" },
-  { id: 12, nombre: "Cinturón Hebilla Dorada",   precio: 12.99, categoria: "accesorios",  tag: "Oferta",   img: "https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=500&q=80" },
+const productos=[
+  {id:1,nombre:"Vestido Floral Elegante",descripcion:"Ligero y femenino para una ocasión especial.",precio:45.99,categoria:"vestidos",tag:"Nuevo",img:"https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&q=80"},{id:2,nombre:"Vestido Largo de Verano",descripcion:"Una silueta fresca para los días de sol.",precio:52,categoria:"vestidos",tag:"",img:"https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500&q=80"},{id:3,nombre:"Vestido Negro de Fiesta",descripcion:"Un clásico elegante que nunca pasa de moda.",precio:68.5,categoria:"vestidos",tag:"Top",img:"https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=500&q=80"},{id:4,nombre:"Blusa Seda Champán",descripcion:"Textura suave para elevar tu look.",precio:28.99,categoria:"blusas",tag:"",img:"https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=500&q=80"},{id:5,nombre:"Blusa Blanca Clásica",descripcion:"Una prenda esencial y fácil de combinar.",precio:24.5,categoria:"blusas",tag:"Oferta",img:"img/blusa-blanca.jpg"},{id:6,nombre:"Pantalón Palazzo Negro",descripcion:"Caída fluida y cómoda para todos los días.",precio:38,categoria:"pantalones",tag:"",img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500&q=80"},{id:7,nombre:"Jeans Ajuste Perfecto",descripcion:"Denim pensado para acompañar tus movimientos.",precio:42.99,categoria:"pantalones",tag:"Top",img:"img/jeans.jpg"},{id:8,nombre:"Bolso Cuero Elegante",descripcion:"El accesorio que completa tus conjuntos.",precio:49.99,categoria:"accesorios",tag:"Nuevo",img:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&q=80"}
 ];
-
-// ============ MOSTRAR PRODUCTOS ============
-const grid = document.getElementById("productsGrid");
-
-function mostrarProductos(filtro = "todos") {
-  grid.innerHTML = "";
-  productos
-    .filter(p => filtro === "todos" || p.categoria === filtro)
-    .forEach(p => {
-      const card = document.createElement("article");
-      card.className = "product-card";
-      card.innerHTML = `
-        <div class="product-img">
-          ${p.tag ? `<span class="product-tag">${p.tag}</span>` : ""}
-          <img src="${p.img}" alt="${p.nombre}" loading="lazy">
-        </div>
-        <div class="product-info">
-          <span class="product-category">${p.categoria}</span>
-          <h3 class="product-name">${p.nombre}</h3>
-          <span class="product-price">$${p.precio.toFixed(2)}</span>
-          <button class="btn-add" data-id="${p.id}">Agregar al carrito 🛒</button>
-        </div>`;
-      grid.appendChild(card);
-    });
-}
-
+const grid=document.getElementById("productsGrid");
+function mostrarProductos(filtro="todos"){grid.innerHTML="";productos.filter(producto=>filtro==="todos"||producto.categoria===filtro).forEach(producto=>{const card=document.createElement("article");card.className="product-card";card.innerHTML=`<div class="product-image">${producto.tag?`<span class="tag">${producto.tag}</span>`:""}<img src="${producto.img}" alt="${producto.nombre}" loading="lazy"></div><div class="product-content"><span class="product-category">${producto.categoria}</span><h3>${producto.nombre}</h3><p>${producto.descripcion}</p><span class="price">$${producto.precio.toFixed(2)}</span><button class="buy-btn" type="button">Comprar</button></div>`;grid.appendChild(card)})}
 mostrarProductos();
-
-// ============ FILTROS ============
-document.getElementById("filters").addEventListener("click", e => {
-  if (!e.target.classList.contains("filter-btn")) return;
-  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-  e.target.classList.add("active");
-  mostrarProductos(e.target.dataset.filter);
-});
-
-// ============ CARRITO (contador) ============
-let carrito = 0;
-const cartCount = document.getElementById("cartCount");
-
-grid.addEventListener("click", e => {
-  if (!e.target.classList.contains("btn-add")) return;
-  carrito++;
-  cartCount.textContent = carrito;
-  const btn = e.target;
-  btn.textContent = "¡Agregado! ✔";
-  setTimeout(() => (btn.textContent = "Agregar al carrito 🛒"), 1200);
-});
-
-// ============ MENÚ MÓVIL ============
-const nav = document.getElementById("nav");
-document.getElementById("btnMenu").addEventListener("click", () => nav.classList.toggle("open"));
-nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => nav.classList.remove("open")));
-
-// ============ FORMULARIO DE CONTACTO ============
-document.getElementById("contactForm").addEventListener("submit", e => {
-  e.preventDefault();
-  alert("¡Gracias por tu mensaje! Te responderemos muy pronto. 💖");
-  e.target.reset();
-});
+document.getElementById("filters").addEventListener("click",event=>{const button=event.target.closest(".filter-btn");if(!button)return;document.querySelectorAll(".filter-btn").forEach(item=>{item.classList.remove("active");item.setAttribute("aria-pressed","false")});button.classList.add("active");button.setAttribute("aria-pressed","true");mostrarProductos(button.dataset.filter)});
+const menu=document.getElementById("btnMenu"),nav=document.getElementById("nav");menu.addEventListener("click",()=>{const open=nav.classList.toggle("open");menu.setAttribute("aria-expanded",String(open));menu.setAttribute("aria-label",open?"Cerrar menú":"Abrir menú")});nav.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{nav.classList.remove("open");menu.setAttribute("aria-expanded","false");menu.setAttribute("aria-label","Abrir menú")}));
+const form=document.getElementById("contactForm"),status=document.getElementById("formStatus");
+function setError(field,message){field.classList.toggle("input-error",Boolean(message));document.getElementById(`error-${field.id}`).textContent=message}
+function validarFormulario(){const nombre=form.nombre.value.trim(),correo=form.email.value.trim(),mensaje=form.mensaje.value.trim(),emailValido=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo);setError(form.nombre,nombre?"":"Ingresá tu nombre.");setError(form.email,emailValido?"":"Ingresá un correo válido.");setError(form.mensaje,mensaje.length>=10?"":"Escribí al menos 10 caracteres.");return Boolean(nombre&&emailValido&&mensaje.length>=10)}
+form.addEventListener("submit",async event=>{event.preventDefault();status.className="form-status";if(!validarFormulario()){status.textContent="Revisá los campos marcados.";status.classList.add("error");return}if(form.action.includes("TU_FORM_ID")){status.textContent="Falta configurar el identificador de Formspree para habilitar el envío.";status.classList.add("error");return}const button=form.querySelector("button[type=submit]");button.disabled=true;button.textContent="Enviando...";try{const response=await fetch(form.action,{method:"POST",body:new FormData(form),headers:{Accept:"application/json"}});if(!response.ok)throw new Error("No se pudo enviar");form.reset();status.textContent="¡Gracias! Tu mensaje fue enviado correctamente.";status.classList.add("success")}catch{status.textContent="No se pudo enviar el mensaje. Intentá nuevamente.";status.classList.add("error")}finally{button.disabled=false;button.textContent="Enviar mensaje"}});
+document.getElementById("year").textContent=new Date().getFullYear();
